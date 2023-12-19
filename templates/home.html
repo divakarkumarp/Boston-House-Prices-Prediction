@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            font-family: 'Arimo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('OIG.jpg') center center fixed; /* Use absolute path */
+            background-size: cover;
+        }
+
+        .login {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+            font-weight: bold; /* Make the label text bold */
+            color: #101010; /* Set the label text color (you can replace this with your preferred color code) */
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .prediction {
+            margin-top: 20px;
+            font-size: 20px;
+            background-color: #afe1e6;
+            color: #030303;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <h1>Boston House Price Prediction</h1>
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict') }}" method="post">
+            <label for="CRIM">CRIM:</label>
+            <input type="text" id="CRIM" name="CRIM" placeholder="CRIM" required="required"><br>
+
+            <label for="ZN">ZN:</label>
+            <input type="text" id="ZN" name="ZN" placeholder="ZN" required="required"><br>
+
+            <label for="INDUS">INDUS:</label>
+            <input type="text" id="INDUS" name="INDUS" placeholder="INDUS" required="required"><br>
+
+            <label for="CHAS">CHAS:</label>
+            <input type="text" id="CHAS" name="CHAS" placeholder="CHAS" required="required"><br>
+
+            <label for="NOX">NOX:</label>
+            <input type="text" id="NOX" name="NOX" placeholder="NOX" required="required"><br>
+
+            <label for="RM">RM:</label>
+            <input type="text" id="RM" name="RM" placeholder="RM" required="required"><br>
+
+            <label for="Age">Age:</label>
+            <input type="text" id="Age" name="Age" placeholder="Age" required="required"><br>
+
+            <label for="DIS">DIS:</label>
+            <input type="text" id="DIS" name="DIS" placeholder="DIS" required="required"><br>
+
+            <label for="RAD">RAD:</label>
+            <input type="text" id="RAD" name="RAD" placeholder="RAD" required="required"><br>
+
+            <label for="TAX">TAX:</label>
+            <input type="text" id="TAX" name="TAX" placeholder="TAX" required="required"><br>
+
+            <label for="PTRATIO">PTRATIO:</label>
+            <input type="text" id="PTRATIO" name="PTRATIO" placeholder="PTRATIO" required="required"><br>
+
+            <label for="B">B:</label>
+            <input type="text" id="B" name="B" placeholder="B" required="required"><br>
+
+            <label for="LSTAT">LSTAT:</label>
+            <input type="text" id="LSTAT" name="LSTAT" placeholder="LSTAT" required="required"><br>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <div class="prediction">
+            {{prediction_text}}
+        </div>
+    </div>
+</body>
+
+</html>
