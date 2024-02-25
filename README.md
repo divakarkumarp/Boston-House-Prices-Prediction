@@ -1,4 +1,4 @@
-# Boston-House-Prices-Prediction# Boston House Prices Prediction
+# Boston House Prices Prediction
 Each record in the database describes a Boston suburb or town. The data was drawn from the Boston Standard Metropolitan Statistical Area (SMSA) in 1970.CRIM: per capita crime rate by town
 ![Boston](https://github.com/divakarkumar424/Boston-House-Prices-Prediction/assets/32620288/b566eeb2-a302-405a-8190-e7cce225c3d4)
 
